@@ -1,0 +1,257 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-11T00:00:00Z",
+  "repository": "danielmills/claude-skills",
+  "categories": {
+    "development": "Code quality, testing, documentation, and version management",
+    "documentation": "Document generation, formatting, and frontend design",
+    "infrastructure": "CI/CD, Docker, containerization, and Git worktrees",
+    "ui": "Frontend features, animations, styling, and UI analysis",
+    "workflow": "Multi-phase plugin development and creative workflows",
+    "research": "Investigation, troubleshooting, and knowledge capture",
+    "system": "Skill management, system configuration, and sync"
+  },
+  "skills": {
+    "codebase-documenter": {
+      "path": "core/development/codebase-documenter",
+      "version": "1.0.0",
+      "description": "Write documentation for codebases including README files, architecture docs, code comments, and API documentation with beginner-friendly templates and best practices.",
+      "category": "development",
+      "dependencies": [],
+      "tags": ["documentation", "readme", "api-docs", "architecture"]
+    },
+    "increment-version": {
+      "path": "core/development/increment-version",
+      "version": "1.0.0",
+      "description": "Increment semantic version numbers across package.json, Cargo.toml, and tauri.conf.json with automatic git commits.",
+      "category": "development",
+      "dependencies": [],
+      "tags": ["versioning", "semver", "release", "git"]
+    },
+    "tech-debt-analyzer": {
+      "path": "core/development/tech-debt-analyzer",
+      "version": "1.0.0",
+      "description": "Analyze technical debt in codebases - identify code smells, architectural issues, dependency problems, and create comprehensive debt documentation.",
+      "category": "development",
+      "dependencies": [],
+      "tags": ["technical-debt", "code-quality", "analysis", "maintainability"]
+    },
+    "test-specialist": {
+      "path": "core/development/test-specialist",
+      "version": "1.0.0",
+      "description": "Write test cases, fix bugs, and improve test coverage for JavaScript/TypeScript applications with unit, integration, and e2e testing strategies.",
+      "category": "development",
+      "dependencies": [],
+      "tags": ["testing", "tdd", "debugging", "coverage"]
+    },
+    "document-skills": {
+      "path": "core/documentation/document-skills",
+      "version": "1.0.0",
+      "description": "Meta-skill for document generation - includes PDF, DOCX, PPTX, and XLSX processing capabilities.",
+      "category": "documentation",
+      "dependencies": [],
+      "tags": ["pdf", "docx", "pptx", "xlsx", "documents"],
+      "subSkills": ["pdf", "docx", "pptx", "xlsx"]
+    },
+    "frontend-enhancer": {
+      "path": "core/documentation/frontend-enhancer",
+      "version": "1.0.0",
+      "description": "Enhance visual design of Next.js applications with modern UI components, color palettes, animations, and responsive layouts.",
+      "category": "documentation",
+      "dependencies": [],
+      "tags": ["ui", "design", "nextjs", "styling", "responsive"]
+    },
+    "cicd-pipeline-generator": {
+      "path": "core/infrastructure/cicd-pipeline-generator",
+      "version": "1.0.0",
+      "description": "Generate CI/CD pipeline configurations for GitHub Actions, GitLab CI, and CircleCI with linting, testing, building, and deployment.",
+      "category": "infrastructure",
+      "dependencies": [],
+      "tags": ["cicd", "github-actions", "gitlab", "deployment"]
+    },
+    "docker-containerization": {
+      "path": "core/infrastructure/docker-containerization",
+      "version": "1.0.0",
+      "description": "Create Dockerfiles, docker-compose configurations, and container deployment guides for Next.js/Node.js applications.",
+      "category": "infrastructure",
+      "dependencies": [],
+      "tags": ["docker", "containers", "kubernetes", "deployment"]
+    },
+    "worktree-manager": {
+      "path": "core/infrastructure/worktree-manager",
+      "version": "1.0.0",
+      "description": "Manage Git worktrees for parallel development workflows.",
+      "category": "infrastructure",
+      "dependencies": [],
+      "tags": ["git", "worktree", "branching", "parallel"]
+    },
+    "new-frontend-feature": {
+      "path": "core/ui/new-frontend-feature",
+      "version": "1.0.0",
+      "description": "Scaffold frontend pages/features with TDD approach following established UI patterns with 90%+ test coverage.",
+      "category": "ui",
+      "dependencies": ["test-specialist"],
+      "tags": ["frontend", "tdd", "scaffolding", "react"]
+    },
+    "tailwind-auditor": {
+      "path": "core/ui/tailwind-auditor",
+      "version": "1.0.0",
+      "description": "Audit Tailwind CSS usage for consistent theming - detect hardcoded colors, arbitrary values, and guide file-by-file refactoring.",
+      "category": "ui",
+      "dependencies": [],
+      "tags": ["tailwind", "css", "theming", "audit"]
+    },
+    "ui-analyzer": {
+      "path": "core/ui/ui-analyzer",
+      "version": "1.0.0",
+      "description": "Analyze React/TypeScript UI for visual consistency, text hierarchy, and WCAG 2.1 Level AA accessibility compliance.",
+      "category": "ui",
+      "dependencies": [],
+      "tags": ["accessibility", "wcag", "audit", "react"]
+    },
+    "ux-animation-guru": {
+      "path": "core/ui/ux-animation-guru",
+      "version": "1.0.0",
+      "description": "Implement smooth animations with TDD methodology using Framer Motion and CSS transitions for polished UX.",
+      "category": "ui",
+      "dependencies": [],
+      "tags": ["animation", "framer-motion", "ux", "tdd"]
+    },
+    "aesthetic-dreaming": {
+      "path": "workflow/aesthetic-dreaming",
+      "version": "1.0.0",
+      "description": "Create aesthetic templates without plugins - capture visual design concepts through adaptive questioning for reusable visual systems.",
+      "category": "workflow",
+      "dependencies": [],
+      "tags": ["design", "aesthetic", "templates", "visual"]
+    },
+    "build-automation": {
+      "path": "workflow/build-automation",
+      "version": "1.0.0",
+      "description": "Orchestrate plugin builds and installation via build script with comprehensive failure handling.",
+      "category": "workflow",
+      "dependencies": [],
+      "tags": ["build", "automation", "juce", "plugins"]
+    },
+    "context-resume": {
+      "path": "workflow/context-resume",
+      "version": "1.0.0",
+      "description": "Load plugin context from handoff files to resume work - parses state, presents summary, routes to continuation skill.",
+      "category": "workflow",
+      "dependencies": [],
+      "tags": ["context", "resume", "handoff", "state"]
+    },
+    "plugin-ideation": {
+      "path": "workflow/plugin-ideation",
+      "version": "1.0.0",
+      "description": "Adaptive brainstorming for plugin concepts and improvements - creative vision capture for new plugins.",
+      "category": "workflow",
+      "dependencies": [],
+      "tags": ["ideation", "brainstorming", "plugins", "creative"]
+    },
+    "plugin-improve": {
+      "path": "workflow/plugin-improve",
+      "version": "1.0.0",
+      "description": "Fix bugs, add features to completed plugins with versioning, backups, regression testing, and changelog automation.",
+      "category": "workflow",
+      "dependencies": ["deep-research", "plugin-testing"],
+      "tags": ["improvement", "bugfix", "versioning", "plugins"]
+    },
+    "plugin-lifecycle": {
+      "path": "workflow/plugin-lifecycle",
+      "version": "1.0.0",
+      "description": "Manage complete plugin lifecycle - install, uninstall, reset, destroy with proper state tracking.",
+      "category": "workflow",
+      "dependencies": [],
+      "tags": ["lifecycle", "install", "uninstall", "plugins"]
+    },
+    "plugin-packaging": {
+      "path": "workflow/plugin-packaging",
+      "version": "1.0.0",
+      "description": "Create branded PKG installers for plugin distribution with automated installation and Gatekeeper bypass.",
+      "category": "workflow",
+      "dependencies": [],
+      "tags": ["packaging", "installer", "distribution", "macos"]
+    },
+    "plugin-planning": {
+      "path": "workflow/plugin-planning",
+      "version": "1.0.0",
+      "description": "Orchestrate Stage 0 research and planning for JUCE plugins - create architecture.md and plan.md contracts.",
+      "category": "workflow",
+      "dependencies": [],
+      "tags": ["planning", "architecture", "juce", "dsp"]
+    },
+    "plugin-testing": {
+      "path": "workflow/plugin-testing",
+      "version": "1.0.0",
+      "description": "Validate audio plugins through automated tests, pluginval, or manual DAW testing for crashes and parameter issues.",
+      "category": "workflow",
+      "dependencies": ["deep-research"],
+      "tags": ["testing", "validation", "pluginval", "daw"]
+    },
+    "plugin-workflow": {
+      "path": "workflow/plugin-workflow",
+      "version": "1.0.0",
+      "description": "Orchestrate JUCE plugin implementation through stages 1-3 (Foundation, DSP, GUI) with automatic validation.",
+      "category": "workflow",
+      "dependencies": ["plugin-planning", "build-automation"],
+      "tags": ["implementation", "juce", "dsp", "gui"]
+    },
+    "ui-mockup": {
+      "path": "workflow/ui-mockup",
+      "version": "1.0.0",
+      "description": "Create WebView UI mockups for audio plugins through iterative design and implementation scaffolding.",
+      "category": "workflow",
+      "dependencies": [],
+      "tags": ["ui", "mockup", "webview", "design"]
+    },
+    "ui-template-library": {
+      "path": "workflow/ui-template-library",
+      "version": "1.0.0",
+      "description": "Manage aesthetic templates - save visual systems from mockups as interpretable prose, apply to new plugins.",
+      "category": "workflow",
+      "dependencies": [],
+      "tags": ["templates", "aesthetic", "library", "design"]
+    },
+    "workflow-reconciliation": {
+      "path": "workflow/workflow-reconciliation",
+      "version": "1.0.0",
+      "description": "Reconcile workflow state files to ensure checkpoints are properly updated and prevent state drift.",
+      "category": "workflow",
+      "dependencies": [],
+      "tags": ["reconciliation", "state", "checkpoints", "sync"]
+    },
+    "deep-research": {
+      "path": "research/deep-research",
+      "version": "1.0.0",
+      "description": "Multi-agent parallel investigation for complex JUCE problems with graduated depth protocol (local, web, parallel).",
+      "category": "research",
+      "dependencies": [],
+      "tags": ["research", "investigation", "juce", "troubleshooting"]
+    },
+    "troubleshooting-docs": {
+      "path": "research/troubleshooting-docs",
+      "version": "1.0.0",
+      "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast searchable lookup.",
+      "category": "research",
+      "dependencies": [],
+      "tags": ["documentation", "troubleshooting", "knowledge-base"]
+    },
+    "system-setup": {
+      "path": "system/system-setup",
+      "version": "1.0.0",
+      "description": "Validate and configure dependencies for Plugin Freedom System - Python, CMake, JUCE, pluginval with auto-installation.",
+      "category": "system",
+      "dependencies": [],
+      "tags": ["setup", "dependencies", "configuration", "juce"]
+    },
+    "skill-sync": {
+      "path": "system/skill-sync",
+      "version": "1.0.0",
+      "description": "Sync Claude skills from GitHub repository - check for updates, pull latest, manage local cache.",
+      "category": "system",
+      "dependencies": [],
+      "tags": ["sync", "update", "github", "meta"]
+    }
+  }
+}
