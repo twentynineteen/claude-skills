@@ -7,7 +7,7 @@ A centralized repository of Claude Code skills with version control, automatic u
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/danielmills/claude-skills.git
+git clone https://github.com/twentynineteen/claude-skills.git
 ```
 
 ### 2. Configure skill sync
@@ -16,7 +16,7 @@ Create or update `~/.claude/skills-config.json`:
 
 ```json
 {
-  "repository": "danielmills/claude-skills",
+  "repository": "twentynineteen/claude-skills",
   "branch": "main",
   "autoCheck": true,
   "autoSync": false

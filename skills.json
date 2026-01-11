@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "lastUpdated": "2026-01-11T00:00:00Z",
-  "repository": "danielmills/claude-skills",
+  "repository": "twentynineteen/claude-skills",
   "categories": {
     "development": "Code quality, testing, documentation, and version management",
     "documentation": "Document generation, formatting, and frontend design",
