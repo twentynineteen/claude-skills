@@ -77,14 +77,6 @@
       "dependencies": [],
       "tags": ["docker", "containers", "kubernetes", "deployment"]
     },
-    "worktree-manager": {
-      "path": "core/infrastructure/worktree-manager",
-      "version": "1.0.0",
-      "description": "Manage Git worktrees for parallel development workflows.",
-      "category": "infrastructure",
-      "dependencies": [],
-      "tags": ["git", "worktree", "branching", "parallel"]
-    },
     "new-frontend-feature": {
       "path": "core/ui/new-frontend-feature",
       "version": "1.0.0",
