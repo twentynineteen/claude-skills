@@ -1,12 +1,13 @@
 ---
 name: skill-sync
-description: Sync Claude skills from GitHub repository. Checks for updates on session start and syncs changes to local cache. Commands - /skill-sync check, /skill-sync pull, /skill-sync status, /skill-sync push <skill-name>
+description: Sync Claude skills from GitHub repository. Checks for updates on session start and syncs changes to local cache. Commands - /skill-sync check, /skill-sync pull, /skill-sync status, /skill-sync push <skill-name>, /skill-sync new <skill-name>
 allowed-tools:
   - Bash
   - Read
   - Write
   - WebFetch
   - Edit
+  - AskUserQuestion
 ---
 
 # skill-sync Skill
@@ -198,6 +199,135 @@ Skills are loaded from `~/.claude/skills-cache/` when invoked. The skill-sync sy
 3. Version history is tracked
 4. Rollback is possible (via git)
 
+### `/skill-sync new <skill-name>`
+
+Create a new skill with proper structure and push to GitHub.
+
+**Workflow:**
+
+1. **Gather information via AskUserQuestion:**
+   - Category selection (present options based on skills.json categories)
+   - Brief description of what the skill does
+   - When to use the skill (trigger phrases)
+   - Tools the skill needs access to
+
+2. **Create skill structure:**
+   ```
+   ~/.claude/skills-cache/{category}/{skill-name}/
+   └── SKILL.md
+   ```
+
+3. **Generate SKILL.md with frontmatter:**
+   ```yaml
+   ---
+   name: {skill-name}
+   description: {description}. {trigger phrases}
+   allowed-tools:
+     - {selected tools}
+   ---
+
+   # {skill-name} Skill
+
+   **Purpose:** {description}
+
+   ## When to Use
+
+   Use this skill when:
+   - {trigger condition 1}
+   - {trigger condition 2}
+
+   ## Workflow
+
+   1. {Step 1}
+   2. {Step 2}
+
+   ## Quick Reference
+
+   | Command | Description |
+   |---------|-------------|
+   | `/{skill-name}` | {brief description} |
+   ```
+
+4. **Update skills.json manifest:**
+   ```json
+   "{skill-name}": {
+     "path": "{category}/{skill-name}",
+     "version": "1.0.0",
+     "description": "{description}",
+     "category": "{category-key}",
+     "dependencies": [],
+     "tags": ["{auto-generated tags}"]
+   }
+   ```
+
+5. **Create symlink in ~/.claude/skills/:**
+   ```bash
+   ln -s ~/.claude/skills-cache/{category}/{skill-name} ~/.claude/skills/{skill-name}
+   ```
+
+6. **Commit and push to GitHub:**
+   ```bash
+   cd ~/.claude/skills-cache
+   git add .
+   git commit -m "feat({skill-name}): add new skill - {brief description}"
+   git push
+   ```
+
+7. **Report success:**
+   ```
+   Skill Created Successfully
+   ==========================
+   Name: {skill-name}
+   Category: {category}
+   Path: {category}/{skill-name}
+   Version: 1.0.0
+
+   The skill is now available. Try: /{skill-name}
+
+   GitHub: https://github.com/{repository}/tree/main/{category}/{skill-name}
+   ```
+
+**Example interaction:**
+
+```
+User: /skill-sync new api-tester
+
+Claude: I'll help you create a new skill. Let me gather some information.
+
+[AskUserQuestion: Category]
+Options: core/development, core/documentation, core/infrastructure, core/ui, workflow, research, system
+
+[AskUserQuestion: Description]
+"What does this skill do? (1-2 sentences)"
+
+[AskUserQuestion: Triggers]
+"When should this skill be invoked? List trigger phrases."
+
+[AskUserQuestion: Tools]
+Options: Read, Write, Edit, Bash, WebFetch, WebSearch, Task, AskUserQuestion
+(multiSelect: true)
+
+Claude: Creating api-tester skill...
+- Created SKILL.md with frontmatter
+- Updated skills.json
+- Created symlink
+- Pushed to GitHub
+
+Skill 'api-tester' is now available!
+```
+
+**Category paths:**
+
+| Category Key | Path | Description |
+|--------------|------|-------------|
+| development | core/development | Testing, documentation, versioning |
+| documentation | core/documentation | Document generation |
+| infrastructure | core/infrastructure | CI/CD, Docker, deployment |
+| ui | core/ui | Frontend, animations, styling |
+| workflow | workflow | Multi-phase development workflows |
+| research | research | Investigation, troubleshooting |
+| system | system | Meta/management skills |
+
 ## Quick Reference
 
 | Command | Description |
@@ -206,3 +336,4 @@ Skills are loaded from `~/.claude/skills-cache/` when invoked. The skill-sync sy
 | `/skill-sync pull` | Download updates |
 | `/skill-sync status` | Show all skill versions |
 | `/skill-sync push <name>` | Push local changes |
+| `/skill-sync new <name>` | Create new skill and push to GitHub |
